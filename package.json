@@ -2,18 +2,43 @@
   "name": "food-pickup-app",
   "version": "1.0.0",
   "description": "Food Pickup App (extended from group project)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "local": "./node_modules/.bin/nodemon --ignore public/",
+    "knex": "./node_modules/.bin/knex"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ty2kim/Food-Pickup-App.git"
   },
-  "author": "",
+  "author": "Lighthouse Labs - TAE YOUNG KIM",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ty2kim/Food-Pickup-App/issues"
   },
-  "homepage": "https://github.com/ty2kim/Food-Pickup-App#readme"
+  "homepage": "https://github.com/ty2kim/Food-Pickup-App#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.14.1",
+    "knex": "^0.12.6",
+    "knex-logger": "^0.1.0",
+    "morgan": "^1.7.0",
+    "node-sass": "^3.10.1",
+    "node-sass-middleware": "^0.9.8",
+    "nodemon": "^1.11.0",
+    "pg": "^6.0.2",
+    "twilio": "^2.11.0",
+    "xmlbuilder": "^8.2.2"
+  },
+  "devDependencies": {
+    "sqlite3": "^3.1.4"
+  }
 }

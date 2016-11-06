@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include partials/_head %>
+  <body>
+    <% include partials/_header %>
+    <div class="container">
+        <div class="col-md-7" id="menu">
+          <h1 class="display-3">Pick your dish</h1>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>MENU</th>
+                <th>CATEGORY</th>
+                <th>PRICE</th>
+                <th class="col-md-8">QUANTITY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (dish in dishes) { %>
+                <tr class="food-item">
+                  <th scope="row" class="dish-name"><%=dishes[dish].name%></th>
+                  <td class="dish-category"><%=dishes[dish].category%></td>
+                  <td class="dish-price"><%=dishes[dish].price%></td>
+                  <td class="col-md-8">
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                            <span class="glyphicon glyphicon-minus">-</span>
+                          </button>
+                      </span>
+                      <input type="text" name="quant[2]" class="form-control input-number" value="<%=quantities[dish]%>" min="1" max="10">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                              <span class="glyphicon glyphicon-plus">+</span>
+                          </button>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col-md-5" id="cart">
+          <h1><span class="fa fa-shopping-cart"></span> Cart</h1>
+          <div class="jumbotron">
+            <ul>
+            </ul>
+            <hr class="my-2">
+            <p class="lead"></p>
+          </div>
+          <a href = "/users/restaurants/<%=id%>/checkout">
+            <button id="checkout-button" type="button" class="btn btn-success pull-right">Checkout</button>
+          </a>
+
+        </div>
+
+    </div>
+
+  </div>
+    <% include partials/_scripts %>
+  </body>
+</html>

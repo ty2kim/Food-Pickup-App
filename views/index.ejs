@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% include partials/_head %>
+  <body>
+    <nav class="navbar navbar-dark bg-inverse">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/#">
+          <img src="/images/hangry-cat.png" width="60" height="60" class="d-inline-block align-top" alt="">
+          Hangry CAT
+        </a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-3">Hungry?</h1>
+        <p class="lead">This is a simple application where you can order foods from restaurants. </p>
+        <hr class="my-2">
+        <% if (isLoggedIn) { %>
+          <p>You are already Logged In. Do you want to log out?</p>
+          <p class="lead">
+            <a href="/logout" class="btn btn-danger btn-lg"><span class="fa fa-sign-out"></span> Log Out</a>
+            <a href="/users/restaurants" class="btn btn-warning btn-lg"><span class="fa fa-play"></span> Go Back</a>
+          </p>
+        <% } else { %>
+          <p>Please Sign in or Register to continue</p>
+          <p class="lead">
+            <a href="/login" class="btn btn-primary btn-lg"><span class="fa fa-user"></span> Sign In</a>
+            <a href="/register" class="btn btn-success btn-lg"><span class="fa fa-user"></span> Register</a>
+          </p>
+        <% } %>
+
+      </div>
+    </div>
+    <% include partials/_scripts %>
+  </body>
+</html>
